@@ -1,11 +1,11 @@
 # Site settings
-title: Andrej Karpathy blog
+title: Stefan Keselj blog
 email: 
-description: "Musings of a Computer Scientist."
+description: "ML ideas I thought were worth sharing."
 baseurl: ""
-url: "http://karpathy.github.io"
-twitter_username: karpathy
-github_username:  karpathy
+url: "http://skeselj.github.io"
+twitter_username: skeselj
+github_username:  skeselj
 
 # Build settings
 markdown: kramdown
