@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I am **Andrej Karpathy**, a PhD student at Stanford working on Deep Learning. My [academic website](http://cs.stanford.edu/people/karpathy/) has much more information.
+I am **Stefan Keselj**, an undergrad at Princeton interested in ML. I made this site so I could share some of my work.
+
+The site layout is a clone of Andrej Karpathy's (http://karpathy.github.io/) and the content style is largely based on his.
