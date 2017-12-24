@@ -1,7 +1,7 @@
 # Site settings
 title: Stefan Keselj's Work
 email: 
-description: "ML ideas I thought were worth sharing."
+description: "This layout was copied from Andrej Karpathy's site."
 baseurl: ""
 url: "http://skeselj.github.io"
 twitter_username: skeselj
