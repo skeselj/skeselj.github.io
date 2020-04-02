@@ -9,6 +9,7 @@ form_el.addEventListener('submit', handleForm);
 function Trigger() {
     console.log('Trigger');
 
+    // Works when run online, but not for localhost.
     var url = 'https://skeselj.github.io/';
     console.log(` Sending GET request to ${url} `);
 
