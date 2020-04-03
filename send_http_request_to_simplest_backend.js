@@ -3,7 +3,8 @@
 function Trigger() {
     console.log('Trigger');
 
-    var url = 'http://localhost:8080';
+    var ip = '192.168.4.33';
+    var url = `${ip}`;
     console.log(`Sending GET request to ${url}`);
 
     response = httpGet(url);

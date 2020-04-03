@@ -14,8 +14,15 @@
     </form>
 </div>
 
-<script type="text/javascript" src="./send_http_request.js"></script>
+<script type="text/javascript" src="./send_http_request_to_simplest_backend.js"></script>
 
+<script type="text/javascript">
+    function handleForm(event) {
+        event.preventDefault();
+    }
+    form_el = document.getElementById("trigger_form");
+    form_el.addEventListener('submit', handleForm);
+</script>
 
 </body>
 </html>
