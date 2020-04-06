@@ -19,8 +19,8 @@ with socketserver.TCPServer(("", PORT), http.server.SimpleHTTPRequestHandler) as
     # The certificate is "self-signed", which chrome doesn't like too much.
     httpd.socket = ssl.wrap_socket(httpd.socket,
                                    server_side=True,
-                                   keyfile='server.key',
-                                   certfile='server.crt')
+                                   keyfile='ssl/dev.key.pem',
+                                   certfile='ssl/dev.cert.pem')
 
     httpd.serve_forever()
 
