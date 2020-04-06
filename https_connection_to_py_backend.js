@@ -1,21 +1,17 @@
-//
+// Library function to send request.
 
-function Trigger() {
-    console.log('Trigger');
+function SendRequest() {
+    var addr = `https://192.168.4.33:4443`;
+    console.log(`Sending GET request to ${addr}`);
 
-    var ip = '192.168.4.33';
-    var url = `http://${ip}:8080`;
-    console.log(`Sending GET request to ${url}`);
-
-    response = httpGet(url);
+    response = httpGet(addr);
     console.log(`The response is ${response}`);
 }
 
-function httpGet(theUrl) {
+function httpGet(addr) {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    // xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');  // doesn't work.. probably need to write this in the script.
-    xmlHttp.send( null );
+    xmlHttp.open("GET", addr, false); // false for synchronous request
+    xmlHttp.send(null);
     return xmlHttp.responseText;
 }
 

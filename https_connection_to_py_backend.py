@@ -1,21 +1,27 @@
+''' Serve over an HTTPS connection, with a self-signed certificate.
+
+This won't work over Chrome, but it does work with "$ curl -k".
+'''
+
 import http.server
-import socketserver
+import ssl
 import socket
-import os
+import socketserver
 
-# class SassyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
-#     def do_GET(self):
-#         self.send_response(200)
-#         self.send_header("Content-type", 'text/html')
-#         self.end_headers()
-#         return
-SassyHTTPRequestHandler = http.server.SimpleHTTPRequestHandler
+PORT = 4443
 
-PORT = 8080
-with socketserver.TCPServer(("", PORT), SassyHTTPRequestHandler) as httpd:
+with socketserver.TCPServer(("", PORT), http.server.SimpleHTTPRequestHandler) as httpd:
+    # Debug information.
     host_name = socket.gethostname()
     IP = socket.gethostbyname(host_name)
+    print(f'host_name = {host_name:}, IP = {IP:}, PORT = {PORT:}')
 
-    print(f'Serving at host (IP: {IP:}, name: {host_name:}), port {PORT:}')
+    # The certificate is "self-signed", which chrome doesn't like too much.
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   keyfile='server.key',
+                                   certfile='server.crt')
 
     httpd.serve_forever()
+
+

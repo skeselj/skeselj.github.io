@@ -5,23 +5,24 @@
 
 
 <div>
-    If you click the button that follows, an HTTP request will be sent. To a
-    hardcoded address.
+    If you click the button that follows, an HTTPS request will be sent to a
+    host.
 </div>
 
 <div>
-    <form id="trigger_form" onsubmit="Trigger()">
+    <form id="request_form" onsubmit="SendRequest()">
         <input type="submit" value="Submit">
     </form>
 </div>
 
-<script type="text/javascript" src="./send_http_request_to_simplest_backend.js"></script>
+<script type="text/javascript" src="./https_connection_to_py_backend.js"></script>
 
 <script type="text/javascript">
+    // Prevent page from reloading when "Submit" button is clicked.
     function handleForm(event) {
         event.preventDefault();
     }
-    form_el = document.getElementById("trigger_form");
+    form_el = document.getElementById("request_form");
     form_el.addEventListener('submit', handleForm);
 </script>
 
